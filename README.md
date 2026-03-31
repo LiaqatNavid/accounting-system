@@ -15,8 +15,8 @@ A web-based accounting and ERP system developed to manage financial operations, 
 ---
 
 ## 🛠️ Tech Stack
-- PHP (Laravel / CodeIgniter)  
-- MySQL / PostgreSQL  
+- PHP (Core PHP)  
+- MySQL  
 - JavaScript  
 - HTML / CSS  
 
@@ -31,17 +31,17 @@ A web-based accounting and ERP system developed to manage financial operations, 
 ---
 
 ## 🏗️ Architecture
-- MVC Architecture  
-- Modular Design  
-- REST-ready structure  
+- Structured PHP (Modular Approach)  
+- MVC-inspired design  
+- Clean separation of logic and UI  
 
 ---
 
 ## ▶️ How to Run
 1. Clone the repository  
-2. Setup database  
-3. Configure database connection  
-4. Run on local server (XAMPP / WAMP / Laravel serve)  
+2. Setup database in MySQL  
+3. Configure database connection file  
+4. Run on local server (XAMPP / WAMP)  
 
 ---
 
