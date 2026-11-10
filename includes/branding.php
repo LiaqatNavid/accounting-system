@@ -41,13 +41,14 @@ function get_branding_settings()
         'company-logo.webp',
     ];
 
+    $appBaseUrl = (strpos($_SERVER['SCRIPT_NAME'] ?? '', '/accounting-system/') !== false) ? '/accounting-system/' : '/';
     $configuredLogo = trim((string) ($settings['logo_path'] ?? ''));
     if ($configuredLogo !== '') {
         $normalizedConfigured = ltrim(str_replace('\\', '/', $configuredLogo), '/');
         $configuredFullPath = $projectRoot . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $normalizedConfigured);
         if (is_file($configuredFullPath)) {
             $branding['logo_path'] = $configuredFullPath;
-            $branding['logo_url'] = '/accounting-system/' . $normalizedConfigured;
+            $branding['logo_url'] = $appBaseUrl . $normalizedConfigured;
             unset($GLOBALS['__company_settings_cache_reset']);
             return $branding;
         }
@@ -57,7 +58,7 @@ function get_branding_settings()
         $fullPath = $logoDir . DIRECTORY_SEPARATOR . $candidate;
         if (is_file($fullPath)) {
             $branding['logo_path'] = $fullPath;
-            $branding['logo_url'] = '/accounting-system/assets/logo/' . $candidate;
+            $branding['logo_url'] = $appBaseUrl . 'assets/logo/' . $candidate;
             unset($GLOBALS['__company_settings_cache_reset']);
             return $branding;
         }
@@ -68,7 +69,7 @@ function get_branding_settings()
         $fullPath = $imageDir . DIRECTORY_SEPARATOR . $candidate;
         if (is_file($fullPath)) {
             $branding['logo_path'] = $fullPath;
-            $branding['logo_url'] = '/accounting-system/images/' . $candidate;
+            $branding['logo_url'] = $appBaseUrl . 'images/' . $candidate;
             unset($GLOBALS['__company_settings_cache_reset']);
             return $branding;
         }
@@ -79,7 +80,7 @@ function get_branding_settings()
         if (!empty($matches)) {
             $firstLogo = basename($matches[0]);
             $branding['logo_path'] = $matches[0];
-            $branding['logo_url'] = '/accounting-system/assets/logo/' . $firstLogo;
+            $branding['logo_url'] = $appBaseUrl . 'assets/logo/' . $firstLogo;
         }
     }
 
@@ -88,7 +89,7 @@ function get_branding_settings()
         if (!empty($matches)) {
             $firstLogo = basename($matches[0]);
             $branding['logo_path'] = $matches[0];
-            $branding['logo_url'] = '/accounting-system/images/' . $firstLogo;
+            $branding['logo_url'] = $appBaseUrl . 'images/' . $firstLogo;
         }
     }
 

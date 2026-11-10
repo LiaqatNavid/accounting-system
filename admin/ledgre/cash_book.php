@@ -129,12 +129,12 @@ while($row = mysqli_fetch_assoc($result)){
 $closing_balance = $running;
 ?>
 
-<link rel="stylesheet" href="/accounting-system/assets/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="/accounting-system/assets/css/select2.min.css">
+<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/select2.min.css">
 
-<script src="/accounting-system/assets/js/jquery-3.7.1.min.js"></script>
-<script src="/accounting-system/assets/js/jquery.dataTables.min.js"></script>
-<script src="/accounting-system/assets/js/select2.min.js"></script>
+<script src="<?php echo $base_url; ?>assets/js/jquery-3.7.1.min.js"></script>
+<script src="<?php echo $base_url; ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo $base_url; ?>assets/js/select2.min.js"></script>
 
 <div class="container-fluid mt-4">
 
@@ -278,3 +278,4 @@ $('#cashTable').DataTable({
 </script>
 
 <?php include "../../includes/footer.php"; ?>
+

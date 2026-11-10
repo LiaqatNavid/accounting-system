@@ -9,7 +9,8 @@ if (!ob_get_level()) {
 require_once __DIR__ . "/rbac.php";
 require_once __DIR__ . "/branding.php";
 
-$base_url = "/accounting-system/";
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+$base_url = (strpos($scriptName, '/accounting-system/') !== false) ? '/accounting-system/' : '/';
 $branding = get_branding_settings();
 
 // When a page sets $minimal_layout = true before including this header,

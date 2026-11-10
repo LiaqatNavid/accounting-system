@@ -2,7 +2,7 @@
 session_start();
 include "../../includes/auth_check.php";
 include "../../config/db.php";
-$base_url = "/accounting-system/";
+$base_url = (strpos($_SERVER['SCRIPT_NAME'] ?? '', '/accounting-system/') !== false) ? '/accounting-system/' : '/';
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 $widget = null;

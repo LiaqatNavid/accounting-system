@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
 <?php $minimal_layout = true; include "includes/header.php"; ?>
 <?php
 $loginBranding = function_exists('get_branding_settings') ? get_branding_settings() : ['logo_url' => ''];
-$loginLogoUrl = !empty($loginBranding['logo_url']) ? $loginBranding['logo_url'] : '/accounting-system/images/logo.png';
+$loginLogoUrl = !empty($loginBranding['logo_url']) ? $loginBranding['logo_url'] : ($base_url ?? '/') . 'images/logo.png';
 ?>
 
 <style>

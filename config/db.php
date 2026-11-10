@@ -4,12 +4,15 @@ $host = "localhost";
 $username = "root";
 $password = "energy";
 $database = "accounting_db";
-//$database = "tooffice";
 
-// Create connection
+// Try local connection first
 $conn = @mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
-    // Fallback to empty password if energy fails
+    // Try live cPanel hosting credentials
+    $conn = @mysqli_connect("localhost", "accuser", "Acc_System#2026!", "accounting_db");
+}
+if (!$conn) {
+    // Fallback to local empty password
     $conn = @mysqli_connect($host, $username, "", $database);
 }
 
