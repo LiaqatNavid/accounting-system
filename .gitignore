@@ -1,0 +1,11 @@
+# Temporary / backup files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Backup and storage directories
+backup/
+storage/
+misc/
