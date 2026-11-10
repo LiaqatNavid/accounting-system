@@ -1,6 +1,8 @@
 # Temporary / backup files
 *.tmp
 *.log
+*.txt
+*.json
 .DS_Store
 Thumbs.db
 .vscode/
