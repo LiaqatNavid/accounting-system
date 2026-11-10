@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/liaqatna/public_html/account-system/
+    - /bin/cp -R * $DEPLOYPATH
